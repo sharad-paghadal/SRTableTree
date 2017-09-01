@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1471CF1F59DDA6003E97C4 /* SRTreeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1471CB1F59DDA6003E97C4 /* SRTreeTableView.swift */; };
+		7C1471D01F59DDA6003E97C4 /* SRTreeTableViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1471CC1F59DDA6003E97C4 /* SRTreeTableViewContentCell.swift */; };
+		7C1471D11F59DDA6003E97C4 /* SRTreeTableViewNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1471CD1F59DDA6003E97C4 /* SRTreeTableViewNode.swift */; };
+		7C1471D21F59DDA6003E97C4 /* SRTreeTableViewNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1471CE1F59DDA6003E97C4 /* SRTreeTableViewNodeCell.swift */; };
 		7CC56DEF1F59B5F800455466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC56DEE1F59B5F800455466 /* AppDelegate.swift */; };
 		7CC56DF11F59B5F800455466 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC56DF01F59B5F800455466 /* ViewController.swift */; };
 		7CC56DF41F59B5F800455466 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC56DF21F59B5F800455466 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C1471CB1F59DDA6003E97C4 /* SRTreeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRTreeTableView.swift; sourceTree = "<group>"; };
+		7C1471CC1F59DDA6003E97C4 /* SRTreeTableViewContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRTreeTableViewContentCell.swift; sourceTree = "<group>"; };
+		7C1471CD1F59DDA6003E97C4 /* SRTreeTableViewNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRTreeTableViewNode.swift; sourceTree = "<group>"; };
+		7C1471CE1F59DDA6003E97C4 /* SRTreeTableViewNodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRTreeTableViewNodeCell.swift; sourceTree = "<group>"; };
 		7CC56DEB1F59B5F800455466 /* SRTableViewTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SRTableViewTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC56DEE1F59B5F800455466 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CC56DF01F59B5F800455466 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C1471CA1F59DDA6003E97C4 /* SRTreeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7C1471CB1F59DDA6003E97C4 /* SRTreeTableView.swift */,
+				7C1471CC1F59DDA6003E97C4 /* SRTreeTableViewContentCell.swift */,
+				7C1471CD1F59DDA6003E97C4 /* SRTreeTableViewNode.swift */,
+				7C1471CE1F59DDA6003E97C4 /* SRTreeTableViewNodeCell.swift */,
+			);
+			path = SRTreeTableView;
+			sourceTree = "<group>";
+		};
 		7CC56DE21F59B5F800455466 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +73,7 @@
 		7CC56DED1F59B5F800455466 /* SRTableViewTree */ = {
 			isa = PBXGroup;
 			children = (
+				7C1471CA1F59DDA6003E97C4 /* SRTreeTableView */,
 				7CC56DEE1F59B5F800455466 /* AppDelegate.swift */,
 				7CC56DF01F59B5F800455466 /* ViewController.swift */,
 				7CC56DF21F59B5F800455466 /* Main.storyboard */,
@@ -137,7 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1471D01F59DDA6003E97C4 /* SRTreeTableViewContentCell.swift in Sources */,
+				7C1471D11F59DDA6003E97C4 /* SRTreeTableViewNode.swift in Sources */,
 				7CC56DF11F59B5F800455466 /* ViewController.swift in Sources */,
+				7C1471CF1F59DDA6003E97C4 /* SRTreeTableView.swift in Sources */,
+				7C1471D21F59DDA6003E97C4 /* SRTreeTableViewNodeCell.swift in Sources */,
 				7CC56DEF1F59B5F800455466 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +328,7 @@
 				7CC56DFF1F59B5F800455466 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
