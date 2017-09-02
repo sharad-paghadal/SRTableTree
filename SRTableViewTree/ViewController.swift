@@ -13,20 +13,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vinu = SRTreeTableViewNode(nodeID: 1, nodeName: "Vinubhai", leftImageName: "", rightImageName: "", isExpand: false)!
+        let vinu = SRTreeTableViewNode(nodeID: 1, nodeName: "1", leftImageName: "", rightImageName: "", isExpand: false)!
+        let ramesh = SRTreeTableViewNode(nodeID: 2, nodeName: "2", leftImageName: "", rightImageName: "", isExpand: false)!
+
+        let bhavesh = SRTreeTableViewNode(nodeID: 11, nodeName: "1.1", leftImageName: "", rightImageName: "", isExpand: false)!
+        let kalpesh = SRTreeTableViewNode(nodeID: 11, nodeName: "1.2", leftImageName: "", rightImageName: "", isExpand: false)!
         
-        let bhavesh = SRTreeTableViewNode(nodeID: 11, nodeName: "Bhaveshbhai", leftImageName: "", rightImageName: "", isExpand: false)!
+        let sharad = SRTreeTableViewNode(nodeID: 11, nodeName: "2.1", leftImageName: "", rightImageName: "", isExpand: false)!
+        let rakesh = SRTreeTableViewNode(nodeID: 11, nodeName: "2.2", leftImageName: "", rightImageName: "", isExpand: false)!
+
+
+        let lax = SRTreeTableViewNode(nodeID: 11, nodeName: "1.1.1", leftImageName: "", rightImageName: "", isExpand: false)!
+        let kalpesh1 = SRTreeTableViewNode(nodeID: 11, nodeName: "1.2.1", leftImageName: "", rightImageName: "", isExpand: false)!
+
         
-        let lax = SRTreeTableViewNode(nodeID: 11, nodeName: "Laxbhai", leftImageName: "", rightImageName: "", isExpand: false)!
-        let laxChild = SRTreeTableViewNode(nodeID: 11, nodeName: "LaxChild", leftImageName: "", rightImageName: "", isExpand: false)!
-        let kalpesh = SRTreeTableViewNode(nodeID: 11, nodeName: "Kalpeshbhai", leftImageName: "", rightImageName: "", isExpand: false)!
-        let kalpesh1 = SRTreeTableViewNode(nodeID: 11, nodeName: "Kalpesh1", leftImageName: "", rightImageName: "", isExpand: false)!
+        let laxChild = SRTreeTableViewNode(nodeID: 11, nodeName: "1.1.1.1", leftImageName: "", rightImageName: "", isExpand: false)!
         
-        let ramesh = SRTreeTableViewNode(nodeID: 2, nodeName: "Rameshbhai", leftImageName: "", rightImageName: "", isExpand: false)!
         
-        let sharad = SRTreeTableViewNode(nodeID: 11, nodeName: "Sharadbhai", leftImageName: "", rightImageName: "", isExpand: false)!
-        let rakesh = SRTreeTableViewNode(nodeID: 11, nodeName: "Rakeshbhai", leftImageName: "", rightImageName: "", isExpand: false)!
-        let sharadsChild = SRTreeTableViewNode(nodeID: 11, nodeName: "sharadsChild", leftImageName: "", rightImageName: "", isExpand: false)!
+        let sharadsChild = SRTreeTableViewNode(nodeID: 11, nodeName: "2.1.1", leftImageName: "", rightImageName: "", isExpand: false)!
         
         
         let rootNodes = [vinu,ramesh]

@@ -101,6 +101,7 @@ class SRTreeTableView: UITableView {
                 
                 if childNode.isExpand{
                     getDeleteIndexPaths(node: childNode)
+                    childNode.isExpand = false
                 }
             }
         }
@@ -130,7 +131,7 @@ extension SRTreeTableView:UITableViewDataSource,UITableViewDelegate{
             cell.node = node
             
             return cell
-        } else{ // 节点cell
+        } else{
             let cell:SRTreeTableViewContentCell = tableView.dequeueReusableCell(withIdentifier: SRTreeTableViewContentCellID, for: indexPath) as! SRTreeTableViewContentCell
             
             cell.node = node
