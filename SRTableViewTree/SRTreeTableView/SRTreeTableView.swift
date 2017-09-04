@@ -23,6 +23,9 @@ class SRTreeTableView: UITableView {
         }
     }
     
+    var isAutoShrinkEnabled: Bool = false
+    var isExpandFromScratch: Bool = true
+    
     fileprivate var tempNodeArray:[SRTreeTableViewNode] = [SRTreeTableViewNode]()
     
     fileprivate var insertIndexPaths:[IndexPath] = [IndexPath]()
@@ -101,7 +104,9 @@ class SRTreeTableView: UITableView {
                 
                 if childNode.isExpand{
                     getDeleteIndexPaths(node: childNode)
-                    childNode.isExpand = false
+                    if isExpandFromScratch {
+                        childNode.isExpand = false
+                    }
                 }
             }
         }
@@ -127,15 +132,11 @@ extension SRTreeTableView:UITableViewDataSource,UITableViewDelegate{
         
         if isLeafNode(node: node){
             let cell:SRTreeTableViewNodeCell = tableView.dequeueReusableCell(withIdentifier: SRTreeTableViewNodeCellID, for: indexPath) as! SRTreeTableViewNodeCell
-            
             cell.node = node
-            
             return cell
         } else{
             let cell:SRTreeTableViewContentCell = tableView.dequeueReusableCell(withIdentifier: SRTreeTableViewContentCellID, for: indexPath) as! SRTreeTableViewContentCell
-            
             cell.node = node
-            
             return cell
         }
     }
@@ -148,6 +149,9 @@ extension SRTreeTableView:UITableViewDataSource,UITableViewDelegate{
         return 0.01
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if isLeafNode(node: tempNodeArray[indexPath.row]) {
+            return SRTreeTableViewContentCellHeight
+        }
         return SRTreeTableViewNodeCellHeight
     }
     
@@ -156,6 +160,7 @@ extension SRTreeTableView:UITableViewDataSource,UITableViewDelegate{
         let node = tempNodeArray[indexPath.row]
         
         if isLeafNode(node: node){
+            print("Leaf node: \(node.nodeName) selected at: \(indexPath.row)")
             return
         } else{
             if node.isExpand{
@@ -168,31 +173,31 @@ extension SRTreeTableView:UITableViewDataSource,UITableViewDelegate{
                 insertChildNode(node: node)
                 insertRows(at: insertIndexPaths, with: .top)
                 
-                if node.depth == 0 {
-                    for rootnode in rootNodes{
-                        if node.nodeName == rootnode.nodeName {
-                            
-                        }else {
-                            if rootnode.isExpand {
-                                deleteIndexPaths = [IndexPath]()
-                                deleteChildNode(node: rootnode)
-                                deleteRows(at: deleteIndexPaths, with: .top)
+                if isAutoShrinkEnabled {
+                    if node.depth == 0 {
+                        for rootnode in rootNodes{
+                            if node.nodeID == rootnode.nodeID {
+                                
+                            }else {
+                                if rootnode.isExpand {
+                                    deleteIndexPaths = [IndexPath]()
+                                    deleteChildNode(node: rootnode)
+                                    deleteRows(at: deleteIndexPaths, with: .top)
+                                }
                             }
                         }
-                        
-                    }
-                }else {
-                    for siblingNode in (node.parentNode?.subNodes)!{
-                        if node.nodeName == siblingNode.nodeName {
-                            
-                        }else {
-                            if siblingNode.isExpand {
-                                deleteIndexPaths = [IndexPath]()
-                                deleteChildNode(node: siblingNode)
-                                deleteRows(at: deleteIndexPaths, with: .top)
+                    }else {
+                        for siblingNode in (node.parentNode?.subNodes)!{
+                            if node.nodeID == siblingNode.nodeID {
+                                
+                            }else {
+                                if siblingNode.isExpand {
+                                    deleteIndexPaths = [IndexPath]()
+                                    deleteChildNode(node: siblingNode)
+                                    deleteRows(at: deleteIndexPaths, with: .top)
+                                }
                             }
                         }
-                        
                     }
                 }
             }
